@@ -21,10 +21,17 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                "output": "/assets/"
+              }
             ],
             "styles": [
-              "src/styles.css"
+              "src/theme.less",
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": []
           },
@@ -119,6 +126,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "VideosListTask-Ahmed-Mobasher"
+    }
+  },
+  "defaultProject": "VideosListTask-Ahmed-Mobasher",
+  "cli": {
+    "analytics": false
+  }
 }

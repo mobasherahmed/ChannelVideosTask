@@ -1,0 +1,82 @@
+<div class="card">
+    <div class="card-header">
+        <div class="utils__title">
+            <strong>Home</strong>
+        </div>
+
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="cui-antd-index-block">
+
+                    <div class="doc-link mb-2" routerLink="/doc">
+                        <button nz-button nzType="danger">
+                            Documentation
+                            <i nz-icon nzType="rise" nzTheme="outline"></i>
+                        </button>
+                    </div>
+
+                    <div class="input-group">
+                        <nz-input-group [nzSuffix]="suffixIconSearch">
+                            <input type="text" nz-input placeholder="Please enter your search text,then press enter"
+                                (change)="onSearchChange()" [(ngModel)]="searchValue" />
+                        </nz-input-group>
+                        <ng-template #suffixIconSearch>
+                            <i nz-icon type="search"></i>
+                        </ng-template>
+                    </div>
+
+                    <nz-table class="mt-2" #basicTable [nzLoading]="loading" [nzData]="displayData">
+                        <thead (nzSortOrderChange)="sort($event)">
+                            <tr>
+                                <th>Index</th>
+                                <th nzShowSort nzColumnKey="snippet.thumbnails.medium.url">Thumbnails</th>
+                                <th nzShowSort nzColumnKey="snippet.title">Title</th>
+                                <th nzShowSort nzColumnKey="snippet.publishedAt">Date</th>
+                                <th>Actions</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let video of basicTable.data; let i = index">
+                                <td>
+                                    {{ i + 1 }}
+                                </td>
+                                <td>
+                                    <a href="https://www.youtube.com/watch?v={{video.id}}" target="_blank">
+                                        <img [src]="video.snippet.thumbnails.medium.url" alt="thumbnails image"
+                                            class="col-md-6">
+                                    </a>
+                                </td>
+
+                                <td>
+                                    <a href="https://www.youtube.com/watch?v={{video.id}}" target="_blank">
+                                        {{video.snippet.title.slice(0, 100)}}
+                                    </a>
+                                </td>
+
+                                <td>
+                                    {{video.snippet.publishedAt | date :'medium'}}
+                                </td>
+
+                                <td>
+                                    <button nz-button nzType="primary" (click)="shareVideoDetails(video)">
+                                        <i nz-icon nzType="unordered-list" nzTheme="outline"></i>
+                                        Video Details
+                                    </button>
+                                </td>
+                            </tr>
+
+
+                        </tbody>
+                    </nz-table>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

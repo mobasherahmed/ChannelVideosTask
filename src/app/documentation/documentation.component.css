@@ -1,0 +1,13 @@
+.doc .title {
+    margin: 0 auto;
+}
+
+.doc .title h1,
+.doc .highlite {
+    color: crimson;
+    text-decoration: underline;
+}
+
+p {
+    font-size: 18px;
+}

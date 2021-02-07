@@ -1,0 +1,96 @@
+<div class="doc">
+    <div class="title text-center">
+        <h1>Documentation</h1>
+        <div routerLink="/home">
+            <button nz-button nzType="primary">
+                <i nz-icon nzType="home" nzTheme="fill"></i>
+                Home Page
+            </button>
+        </div>
+    </div>
+
+
+    <div class="content">
+
+        <div class="header">
+            <h2>Overview</h2>
+        </div>
+        <div class="desc">
+            <p>This App displaying list of videos from TEDx Channel ,
+                <span class="highlite">First page</span> is the home page that displaying
+                the list in a table view including
+                (Title – Thumbnail – Date - View Details button) ,
+                Search bar above table for search by video title and sorting each
+                column descend or asecend also table pagination for multi pages,
+                <span class="highlite">Second page</span> is the video details showing all video details including
+                (# of likes - # of dislikes - # of viewers - # of comments - Title -
+                Thumbnail – Date - Duration of video - Description - rate)
+                With the option to add video to favourite list and also rating it .
+            </p>
+        </div>
+
+    </div>
+
+    <div class="content">
+
+        <div class="header">
+            <h2>Scenario</h2>
+        </div>
+        <div class="desc">
+            <p>
+                After App run it will redirect to home page automatically , calling api that return
+                list of videos showing on a table view ,
+                then all videos cached and stored in a local stoarge variable
+                called <span class="highlite">Videos</span> to easily get result on offline mode ,
+
+                <span class="highlite">In Home Page</span> you can search , sort and so on go to video details by
+                clicking on <span class="highlite">Video Details button </span> .
+
+                <span class="highlite">In Video Deatils Page</span> all video details are shown and you can add video to
+                your favourite list by clicking on <span class="highlite">Add to favourite button </span>,
+
+                After Clicking on this button video id will be stored in a
+                new local stoarge array called Fav to determine that this video is already in your favourites or not on
+                the next time , also you can Rate the video , After rating the video it will be stored in new array in
+                local stoarge
+                called Rating with the video id to get the old rate on the next time .
+
+            </p>
+        </div>
+        <div class="content">
+
+            <div class="header">
+                <h2>Integrate with Youtube api</h2>
+            </div>
+            <div class="desc">
+                <p>
+                    First I gerenate an Api Key from
+                    <a href="https://console.developers.google.com/" target="_blank" rel="noopener noreferrer">
+                        Developer Console's
+                    </a>
+                    , Then i used api that returns a list of videos.
+                    <br>
+                    to get all video information in one request as
+                    this request take in part parameter (snippet-contentDetails-statistics-status) .
+                    <br>
+                    <img src="assets/api.PNG" class="my-2 col-md-8">
+                    <img src="assets/VideoList.PNG" class="my-2 col-md-8">
+                    <br>
+
+                    <span class="highlite">
+                        Another way to get all videos of a specific youtube channel , but
+                        I don't prefer to it as it's api
+                        only take sinnpet in part parameter so i must make another request to get video information
+                        like (contentDetails-statistics-status).
+                        I declared all of this in code with declaration comments showing how i could use
+                        this way in home page
+                        from line 70 to line 110 ,
+                        Here is a screenshot from my youtube service that showing another way api's .
+                    </span>
+                    <br>
+                    <img src="assets/anotherWay.PNG" class="my-2 col-md-8">
+                </p>
+            </div>
+
+        </div>
+    </div>

@@ -1,0 +1,20 @@
+nz-input-group {
+    height: 40px;
+}
+
+th,
+td {
+    text-align: center !important;
+}
+a {
+    display: inline-block;
+    text-decoration: underline;
+}
+nz-table {
+    overflow: hidden !important;
+    min-height: 380px;
+}
+.doc-link {
+    cursor: pointer;
+    display: inline-block;
+}
